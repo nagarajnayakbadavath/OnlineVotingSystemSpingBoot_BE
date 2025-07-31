@@ -1,0 +1,76 @@
+# Ignore Maven target directory
+/target/
+
+# Maven Wrapper binaries
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# Wrapper log
+mvnw.cmd
+mvnw
+
+# Build directories (if generated in unusual locations)
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Eclipse / STS-specific files
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+
+# Compiled class files
+*.class
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Test result directories
+test-output/
+surefire-reports/
+failsafe-reports/
+
+# Node-related files if using frontend in same project
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Git conflict files
+*.orig
+
+# Backup files
+*~
+*.swp
+*.bak
+*.tmp
+
+# Ignore IDE metadata
+.metadata/
