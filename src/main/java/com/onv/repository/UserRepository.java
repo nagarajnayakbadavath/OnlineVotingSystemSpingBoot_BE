@@ -1,5 +1,7 @@
 package com.onv.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -21,5 +23,6 @@ public interface UserRepository extends JpaRepository<Users, Integer>{
 	@Transactional
 	@Query("delete from Users where email=:email")
 	int deleteByEmail(@Param("email") String email);
+	
 	
 }

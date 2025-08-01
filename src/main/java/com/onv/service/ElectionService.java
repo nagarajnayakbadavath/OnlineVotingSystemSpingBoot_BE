@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.onv.entities.Elections;
-import com.onv.entities.Users;
 import com.onv.repository.ElectionRepository;
 
 @Service
@@ -25,6 +24,7 @@ public class ElectionService {
 	
 	
 	
+	
 	public String insertElection(Elections election) {
 		try {
 			electionRepository.save(election);
@@ -36,5 +36,26 @@ public class ElectionService {
 		}
 		
 	}
+	
+	public String makeElectionActive(int election_id){
+		try {
+			electionRepository.makeElectionActive(election_id);
+			return "Election is activated";
+			
+		}catch(Exception e) {
+			return "error occured"+e.getMessage();
+		}
+	}
+	
+	public String makeElectionInActive(int election_id){
+		try {
+			electionRepository.makeElectionInActive(election_id);
+			return "Election is Inactivated";
+			
+		}catch(Exception e) {
+			return "error occured"+e.getMessage();
+		}
+	}
 }
+
 

@@ -1,5 +1,6 @@
 package com.onv.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +22,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	
-	
-	// Adding the users
-	
-	@GetMapping("/")
-	public String rootMessage() {
-		return "Hello World";
-	}
+
 	
 	@PostMapping("/addUsers")
 	public String insertUser(@RequestBody Users user) {
@@ -40,13 +34,19 @@ public class UserController {
 	// Getting the users 
 	@GetMapping("/getUsers")
 	public List<Users> getUsers(){
-		List<Users> users=userService.getUsers();
-		
-//		for(Users user:users) {
-//			System.out.println("The user name is "+user.getName()+"The user gmail is "+user.getEmail());
-//		}
-		return users;
+		try {
+			List<Users> users=userService.getUsers();
+//			for(Users user:users) {
+//				System.out.println("The user name is "+user.getName()+"The user gmail is "+user.getEmail());
+//			}
+			return users;
+		}catch(Exception e) {			
+			System.out.println("an error occured"+e.getMessage());
+			return new ArrayList<>();
+		}
 	}
+	
+
 	
 	
 	// In CRUD operations update will be done by save method only..So I will write a query to update the user by mailId
