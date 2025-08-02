@@ -15,6 +15,7 @@ public class Votes {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
 	@ManyToOne
 	@JoinColumn(name="voter_id",referencedColumnName="id")
 	private Users user;
